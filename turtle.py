@@ -2,17 +2,9 @@
 import requests
 import math
 import webbrowser
-import praw
+
 
 from bs4 import BeautifulSoup
-
-
-def adult_entertainment():
-    pass
-
-
-def alphabetize(*words):
-    pass
 
 
 def corona():
@@ -52,12 +44,26 @@ def docs(docs_name, search_entry):
 
     if docs_name == "html":
         webbrowser.open(f"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/{search_entry}")
-    
+
     elif docs_name == "css":
         webbrowser.open("https://developer.mozilla.org/en-US/docs/Web/CSS")
 
+
 def factorial(num):
+
     print(f"The answer is {math.factorial(int(num))}")
+
+
+def file_alphabetize(file_name, rev):
+    with open(file_name, 'r') as file:
+        sort = file.readlines()
+
+        if rev == "no":
+            for entry in sorted(sort):
+                print(entry, end="")
+        else:
+            for entry in sorted(sort, reverse=True):
+                print(entry, end="")
 
 
 def read(file_name):
@@ -72,7 +78,7 @@ def reddit(subreddit_name):
 def ruqqus(guild_name):
     webbrowser.open(f"https://ruqqus.com/+{guild_name}")
 
- 
+
 def stocks(company_name):
     req = requests.get(f"https://money.cnn.com/quote/quote.html?symb={company_name}")
     source = req.content
@@ -97,5 +103,6 @@ def stocks(company_name):
     print(f"{price_change.get_text()}")
     print("Stock data acquired from https://money.cnn.com (◕‿◕✿)")
 
-def wikipedia():
+
+def f_wikipedia():
     pass

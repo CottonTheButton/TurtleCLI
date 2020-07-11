@@ -1,22 +1,16 @@
 #!/usr/local/bin/python3.8
-import sys, os
+import sys
 import turtle
-
 
 try:
     first_arg = sys.argv[1]
 
-
-    if first_arg == "alphabetize":
-        print(turtle.alphabetize())
-
-
-    elif first_arg == "corona" or first_arg == "covid":
+    if first_arg == "corona" or first_arg == "covid":
         print(turtle.corona())
 
     elif first_arg == "docs":
         turtle.docs(sys.argv[2], sys.argv[3])
-        
+
     elif first_arg == "factorial":
 
         try:
@@ -40,28 +34,21 @@ try:
         except IndexError:
             print("Syntax: turtles factorial <number that you want to get that factorial of>")
 
-
     elif first_arg == "help":
         commands_list = []
-
-
-    elif first_arg == "solve":
-
-        operator = sys.argv[2]
-        turtle.solve(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
-
 
     elif first_arg == "reddit":
         turtle.reddit(sys.argv[2])
 
-
     elif first_arg == "ruqqus":
         turtle.ruqqus(sys.argv[2])
 
-
     elif first_arg == "talk":
         raise Exception("WIP!!!")
-        
+
+    elif first_arg == "sort":
+        turtle.file_alphabetize(sys.argv[2], sys.argv[3])
+
     elif first_arg == "stocks" or first_arg == "stock":
         turtle.stocks(sys.argv[2])
 
